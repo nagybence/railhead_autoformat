@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :sanitize_all do
+# task :simple_sanitize do
 #   # Task goes here
 # end
