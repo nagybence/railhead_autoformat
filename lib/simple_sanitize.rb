@@ -5,13 +5,13 @@ module SimpleSanitize
     base.extend ActionView::Helpers::SanitizeHelper::ClassMethods
     base.class_eval do
       before_save :sanitize_fields
-      class_inheritable_reader :simple_sanitize_options
+      class_inheritable_reader :simple_sanitize
     end
   end
 
   module ClassMethods
     def sanitize_fields(options = {})
-      write_inheritable_attribute(:simple_sanitize_options, {
+      write_inheritable_attribute(:simple_sanitize, {
         :except => (options[:except] || []),
         :allow_tags => (options[:allow_tags] || [])
       })
@@ -24,9 +24,9 @@ module SimpleSanitize
       next unless (column.type == :string || column.type == :text)
       field = column.name.to_sym
       value = self[field]
-      if simple_sanitize_options && simple_sanitize_options[:except].include?(field)
+      if simple_sanitize && simple_sanitize[:except].include?(field)
         next
-      elsif simple_sanitize_options && simple_sanitize_options[:allow_tags].include?(field)
+      elsif simple_sanitize && simple_sanitize[:allow_tags].include?(field)
         self[field] = sanitize(value)
       else
         self[field] = strip_tags(value)
