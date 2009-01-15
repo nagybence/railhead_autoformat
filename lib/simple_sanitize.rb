@@ -23,7 +23,7 @@ module SimpleSanitize
     self.class.columns.each do |column|
       next unless (column.type == :string || column.type == :text)
       field = column.name.to_sym
-      value = self[field].strip
+      value = self[field] && self[field].strip
       if simple_sanitize_options && simple_sanitize_options[:except].include?(field)
         self[field] = value
       elsif simple_sanitize_options && simple_sanitize_options[:allow_tags].include?(field)
