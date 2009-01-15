@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "simple_sanitize"
-  s.version  = "0.1.1"
+  s.version  = "0.1.2"
   s.date     = "2009-01-15"
   s.summary  = "SimpleSanitize is a Ruby on Rails plugin that automatically strip tags from input fields."
   s.email    = "nagybence@tipogral.hu"
