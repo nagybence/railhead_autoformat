@@ -1,6 +1,6 @@
 = SimpleSanitize
 
-SimpleSanitize is a Ruby on Rails plugin that automatically strip tags from input fields.
+SimpleSanitize is a Ruby on Rails plugin that automatically strips tags from input fields.
 
 == Installation
 
