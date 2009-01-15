@@ -16,11 +16,11 @@ Or as Rails plugin:
 
 It works fully automatically, but there are two options to modify the default behavior.
 
-1. Does not strip a parameter:
+Does not strip a parameter:
 
   sanitize_fields :except => [:title]
 
-2. Uses 'sanitize' instead of 'strip_tags':
+Uses 'sanitize' instead of 'strip_tags':
 
   sanitize_fields :allow_tags => [:body]
 
