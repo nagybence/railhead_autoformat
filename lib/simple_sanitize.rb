@@ -4,7 +4,7 @@ module SimpleSanitize
     base.send :include, ActionView::Helpers::SanitizeHelper
     base.extend ActionView::Helpers::SanitizeHelper::ClassMethods
     base.class_eval do
-      before_save :sanitize_fields
+      before_validation :sanitize_fields
       class_inheritable_reader :simple_sanitize_options
     end
   end
