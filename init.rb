@@ -1,1 +1,1 @@
-require 'simple_sanitize'
+require 'railhead_sanitize'

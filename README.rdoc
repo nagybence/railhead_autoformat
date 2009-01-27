@@ -1,16 +1,16 @@
-= SimpleSanitize
+= RailheadSanitize
 
-SimpleSanitize is a Ruby on Rails plugin that automatically strips tags from input fields.
+RailheadSanitize is a Ruby on Rails plugin that automatically strips tags from input fields.
 
 == Installation
 
 Installation is available as gem (recommended):
 
-  config.gem "nagybence-simple_sanitize", :lib => "simple_sanitize", :source => "http://gems.github.com"
+  config.gem 'nagybence-railhead_sanitize', :lib => 'railhead_sanitize', :source => 'http://gems.github.com'
 
 Or as Rails plugin:
 
-  $ ruby script/plugin install git://github.com/nagybence/simple_sanitize.git
+  $ ruby script/plugin install git://github.com/nagybence/railhead_sanitize.git
 
 == Usage
 
@@ -18,12 +18,12 @@ It works fully automatically, but there are two options to modify the default be
 
 Does not strip a parameter:
 
-  sanitize_fields :except => [:title]
+  auto_sanitize :except => [:title]
 
 Uses 'sanitize' instead of 'strip_tags':
 
-  sanitize_fields :allow_tags => [:body]
+  auto_sanitize :allow_tags => [:body]
 
 == License
 
-Copyright (c) 2008 Bence Nagy (nagybence@tipogral.hu), released under the MIT license.
+Copyright (c) 2008-2009 Bence Nagy (nagybence@tipogral.hu), released under the MIT license.
