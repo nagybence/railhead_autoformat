@@ -20,7 +20,7 @@ module RailheadSanitize
 
   def sanitize_fields
     self.class.columns.each do |column|
-      next unless (column.type == :string || column.type == :text)
+      next unless column.type == :string or column.type == :text
       field = column.name.to_sym
       value = self[field] && self[field].strip
       if sanitize_options && sanitize_options[:except].include?(field)
