@@ -22,13 +22,14 @@ module RailheadSanitize
     self.class.columns.each do |column|
       next unless column.type == :string or column.type == :text
       field = column.name.to_sym
-      value = self[field] && self[field].strip
-      if sanitize_options && sanitize_options[:except].include?(field)
-        self[field] = value
-      elsif sanitize_options && sanitize_options[:allow_tags].include?(field)
-        self[field] = sanitize(value)
-      else
-        self[field] = strip_tags(value)
+      if self[field].is_a?(String)
+        self[field] = if sanitize_options && sanitize_options[:except].include?(field)
+          self[field].strip
+        elsif sanitize_options && sanitize_options[:allow_tags].include?(field)
+          sanitize(self[field]).strip
+        else
+          strip_tags(self[field]).strip
+        end
       end
     end
   end
