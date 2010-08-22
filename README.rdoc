@@ -6,7 +6,7 @@ RailheadSanitize is a Ruby on Rails plugin that automatically strips tags from i
 
 Installation is available as gem (recommended):
 
-  config.gem 'nagybence-railhead_sanitize', :lib => 'railhead_sanitize', :source => 'http://gems.github.com'
+  config.gem 'railhead_sanitize'
 
 Or as Rails plugin:
 
