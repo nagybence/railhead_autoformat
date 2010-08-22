@@ -1,4 +1,5 @@
 module RailheadSanitize
+
   def self.included(base)
     base.extend ClassMethods
     base.send :include, ActionView::Helpers::SanitizeHelper
@@ -10,6 +11,7 @@ module RailheadSanitize
   end
 
   module ClassMethods
+
     def auto_sanitize(options = {})
       write_inheritable_attribute(:sanitize_options, {
         :except => (options[:except] || []),
