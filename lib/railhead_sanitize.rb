@@ -4,17 +4,17 @@ module RailheadSanitize
     base.send :include, ActionView::Helpers::SanitizeHelper
     base.extend ActionView::Helpers::SanitizeHelper::ClassMethods
     base.class_eval do
-      class_inheritable_reader :sanitize_options
+      class_attribute :sanitize_options
       before_validation :sanitize_fields
     end
   end
 
   module ClassMethods
     def auto_sanitize(options = {})
-      write_inheritable_attribute(:sanitize_options, {
+      self.sanitize_options = {
         :except => (options[:except] || []),
         :allow_tags => (options[:allow_tags] || [])
-      })
+      }
     end
   end
 
