@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "railhead_sanitize"
-  s.version  = "0.3.0"
+  s.version  = "0.3.1"
   s.date     = "2012-03-13"
   s.summary  = "RailheadSanitize is a Ruby on Rails plugin that automatically strips tags from input fields."
   s.email    = "nagybence@tipogral.hu"
