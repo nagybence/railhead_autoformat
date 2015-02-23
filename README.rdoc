@@ -1,29 +1,19 @@
-= RailheadSanitize
+= RailheadAutoformat
 
-RailheadSanitize is a Ruby on Rails plugin that automatically strips tags from input fields.
+RailheadAutoformat is a Ruby on Rails plugin that automatically cleans up input fields.
 
 == Installation
 
-Installation is available as gem (recommended):
+Add to your Gemfile:
 
-  config.gem 'railhead_sanitize'
-
-Or as Rails plugin:
-
-  $ ruby script/plugin install git://github.com/nagybence/railhead_sanitize.git
+  gem 'railhead_autoformat'
 
 == Usage
 
-It works fully automatically, but there are two options to modify the default behavior.
+It works fully automatically, but there is one options to modify the default behavior.
 
-Does not strip a parameter:
-
-  auto_sanitize :except => [:title]
-
-Uses 'sanitize' instead of 'strip_tags':
-
-  auto_sanitize :allow_tags => [:body]
+  auto_format except: [:title]
 
 == License
 
-Copyright (c) 2008-2009 Bence Nagy (nagybence@tipogral.hu), released under the MIT license.
+Copyright (c) 2012-2015 Bence Nagy (bence.nagy@gmail.com), released under the MIT license.
